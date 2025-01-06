@@ -1,21 +1,22 @@
-# 📊 Data Erasure Script
+# Data Erasure Script 📧
 
-## Overview
-This Python script is designed to help users exercise their **GDPR rights** by sending personalized emails to data brokers requesting the erasure of personal data. It automates the process of contacting multiple data brokers by leveraging Gmail's SMTP server.
+## Overview 🌍
+This Python script helps users exercise their **GDPR rights** by sending personalized emails to data brokers requesting the erasure of personal data. It automates the process of contacting multiple data brokers via Gmail's SMTP server.
 
-## Features
+## Features ✨
 - **User Input**: Requests your Gmail address, app-specific password, first name, and last name.
-- **Compliance with GDPR**: Drafts a formal GDPR-compliant email to request the deletion of personal data.
+- **Credential Validation**: Verifies Gmail credentials before proceeding.
+- **GDPR Compliance**: Drafts a formal GDPR-compliant email to request data deletion.
 - **Multiple Recipients**: Sends emails to a predefined list of major data brokers.
-- **Secure Connection**: Uses TLS encryption for secure communication with Gmail's SMTP server.
+- **Secure Communication**: Uses TLS encryption for secure connections with Gmail's SMTP server.
 
-## Prerequisites
-1. **Python**: Ensure you have Python installed on your system.
-2. **App-Specific Password**: If two-factor authentication (2FA) is enabled for your Gmail account, generate an app-specific password:
-   - Go to [Google App Passwords](https://myaccount.google.com/apppasswords).
-   - Follow the instructions to generate a password for this script.
+## Prerequisites ⚙️
+1. **Python**: Ensure Python is installed on your system.
+2. **App-Specific Password**:
+   - If two-factor authentication (2FA) is enabled for your Gmail account, generate an app-specific password.
+   - Go to [Google App Passwords](https://myaccount.google.com/apppasswords) and follow the instructions.
 
-## Setup
+## Setup 🛠️
 1. **Install Required Libraries**:
    No external libraries are required as the script uses Python's built-in `smtplib` and `email` modules.
 
@@ -25,7 +26,7 @@ This Python script is designed to help users exercise their **GDPR rights** by s
 3. **Prepare Your Gmail Account**:
    - Ensure your account has access to less secure apps enabled, or use an app-specific password.
 
-## How to Use
+## How to Use 🚀
 1. **Run the Script**:
    Execute the script in your terminal or IDE:
    ```bash
@@ -37,28 +38,31 @@ This Python script is designed to help users exercise their **GDPR rights** by s
    - Enter your Gmail password or app-specific password.
    - Enter your first name and last name.
 
-3. **Email Dispatch**:
+3. **Confirmation**:
+   - Review the details you entered.
+   - Confirm to proceed with sending the emails.
+
+4. **Email Dispatch**:
    - The script sends GDPR-compliant emails to all data brokers in the predefined list.
    - You will see confirmation messages for each email sent.
 
-## List of Data Brokers
+## List of Data Brokers 📋
 - Acxiom: `data-privacy@acxiom.com`
 - Experian: `consumer.datadeletion@experian.com`
-- Equifax: `uk.dataprotection@equifax.com`
+- Equifax: `customerservice.eportsupport@equifax.com`
 - CoreLogic: `privacy@corelogic.com`
 - Dun & Bradstreet: `data-privacy@dnb.com`
 - Schober: `datenschutz@schober.de`
-- Bisnode: `privacy@bisnode.com`
+- Bisnode: `dpo@bisnode.com`
 - Criteo: `dpo@criteo.com`
 - Zeotap: `privacy@zeotap.com`
 - Axiom: `privacy@axiomlaw.com`
 - Intelius: `privacy@intelius.com`
 - Spokeo: `privacy@spokeo.com`
-- Whitepages: `privacy@whitepages.com`
 - Datanyze: `privacy@datanyze.com`
 - ZoomInfo: `privacy@zoominfo.com`
 
-## Email Template
+## Email Template ✉️
 Below is the template used by the script:
 
 ---
@@ -92,9 +96,9 @@ Sincerely,
 ```
 ---
 
-## Notes
+## Notes 📝
 - **Email Rate Limits**: Gmail may limit the number of emails sent in a short period. The script includes a delay to mitigate this.
 - **Error Handling**: The script provides feedback for any errors encountered while sending emails.
 
-## Disclaimer
+## Disclaimer ⚠️
 This script is provided for informational purposes and should be used responsibly. Ensure you have the legal right to request data deletion from the listed brokers.
