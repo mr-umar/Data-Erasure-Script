@@ -6,11 +6,35 @@ from time import sleep
 # App-specific password
 print("ℹ️ If you have two-factor authentication enabled, please generate an app-specific password at https://myaccount.google.com/apppasswords.\n")
 
+# Function to validate user input
+def validateEmailAndPassword():
+    while True:
+        userEmail = input("> Enter your Gmail address: ")
+        userPassword = input("> Enter your Gmail password (or app-specific password): ")
+        try:
+            # Attempt to connect to Gmail SMTP to validate credentials
+            with smtplib.SMTP("smtp.gmail.com", 587) as server:
+                server.starttls()
+                server.login(userEmail, userPassword)
+                print("✔️ Gmail credentials verified successfully.")
+                return userEmail, userPassword
+        except Exception as e:
+            print(f"❌ Failed to verify credentials: {e}. Please try again.\n")
+
 # Request user information
-userEmail = input("> Enter your Gmail address: ")
-userPassword = input("> Enter your Gmail password (or app-specific password): ")
+userEmail, userPassword = validateEmailAndPassword()
 firstName = input("> Enter your first name: ")
 lastName = input("> Enter your last name: ")
+
+# Confirm user details before proceeding
+print("\nPlease confirm your details:\n")
+print(f"- Gmail Address: {userEmail}")
+print(f"- First Name: {firstName}")
+print(f"- Last Name: {lastName}\n")
+confirmation = input("> Do you want to proceed with these details? (Y/N): ").strip().lower()
+if confirmation != "yes" or confirmation != "y":
+    print("❌ Process canceled by the user.")
+    exit()
 
 print("\n\n📧 Sending emails to data brokers...")
 
@@ -26,7 +50,7 @@ dataBrokersEmails = [
     "privacy@corelogic.com",
     "data-privacy@dnb.com",  # Dun & Bradstreet
     "datenschutz@schober.de",
-    "privacy@bisnode.com",
+    "dpo@bisnode.com",
     "dpo@criteo.com",
     "privacy@zeotap.com",
     "privacy@axiomlaw.com",
@@ -36,7 +60,6 @@ dataBrokersEmails = [
     "privacy@datanyze.com",
     "privacy@zoominfo.com"
 ]
-
 
 # Email
 subject = "Request for Erasure of Personal Data Under the GDPR"
@@ -83,12 +106,12 @@ def sendEmail(recipientEmail):
             server.login(userEmail, userPassword)
             server.sendmail(userEmail, recipientEmail, msg.as_string())
 
-        print(f"Email successfully sent to {recipientEmail}")
+        print(f"✔️ Email successfully sent to {recipientEmail}")
     except Exception as e:
-        print(f"Failed to send email to {recipientEmail}: {e}")
-
+        print(f"❌ Failed to send email to {recipientEmail}: {e}")
 
 # Send emails to all data brokers
 for brokerEmail in dataBrokersEmails:
     sendEmail(brokerEmail)
     sleep(3)
+
