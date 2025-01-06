@@ -46,7 +46,7 @@ smtpPort = 587
 dataBrokersEmails = [
     "data-privacy@acxiom.com",
     "consumer.datadeletion@experian.com",
-    "uk.dataprotection@equifax.com",
+    "customerservice.eportsupport@equifax.com",
     "privacy@corelogic.com",
     "data-privacy@dnb.com",  # Dun & Bradstreet
     "datenschutz@schober.de",
@@ -56,7 +56,6 @@ dataBrokersEmails = [
     "privacy@axiomlaw.com",
     "privacy@intelius.com",
     "privacy@spokeo.com",
-    "privacy@whitepages.com",
     "privacy@datanyze.com",
     "privacy@zoominfo.com"
 ]
