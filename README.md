@@ -1,4 +1,4 @@
-# Data Erasure Script
+# 📊 Data Erasure Script
 
 ## Overview
 This Python script is designed to help users exercise their **GDPR rights** by sending personalized emails to data brokers requesting the erasure of personal data. It automates the process of contacting multiple data brokers by leveraging Gmail's SMTP server.
