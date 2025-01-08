@@ -3,6 +3,27 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from time import sleep
 
+
+# List of data brokers emails
+dataBrokersEmails = [
+    "data-privacy@acxiom.com",
+    "consumer.datadeletion@experian.com",
+    "customerservice.eportsupport@equifax.com",
+    "privacy@corelogic.com",
+    "customersupport@dnb.com",  # Dun & Bradstreet https://support.google.com/adspolicy/answer/13650402
+    "datenschutz@schober.de",
+    "dpo@bisnode.com",
+    "dpo@criteo.com",
+    "privacy@zeotap.com",
+    "privacy@axiomlaw.com",
+    "privacy@intelius.com",
+    "privacy@spokeo.com",
+    "privacy@datanyze.com",
+    "privacy@zoominfo.com"
+]
+
+
+
 # App-specific password
 print("ℹ️ If you have two-factor authentication enabled, please generate an app-specific password at https://myaccount.google.com/apppasswords.\n")
 
@@ -42,23 +63,6 @@ print("\n\n📧 Sending emails to data brokers...")
 smtpServer = "smtp.gmail.com"
 smtpPort = 587
 
-# List of data brokers emails
-dataBrokersEmails = [
-    "data-privacy@acxiom.com",
-    "consumer.datadeletion@experian.com",
-    "customerservice.eportsupport@equifax.com",
-    "privacy@corelogic.com",
-    "data-privacy@dnb.com",  # Dun & Bradstreet
-    "datenschutz@schober.de",
-    "dpo@bisnode.com",
-    "dpo@criteo.com",
-    "privacy@zeotap.com",
-    "privacy@axiomlaw.com",
-    "privacy@intelius.com",
-    "privacy@spokeo.com",
-    "privacy@datanyze.com",
-    "privacy@zoominfo.com"
-]
 
 # Email
 subject = "Request for Erasure of Personal Data Under the GDPR"
