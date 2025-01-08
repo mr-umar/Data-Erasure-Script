@@ -51,7 +51,7 @@ This Python script helps users exercise their **GDPR rights** by sending persona
 - Experian: `consumer.datadeletion@experian.com`
 - Equifax: `customerservice.eportsupport@equifax.com`
 - CoreLogic: `privacy@corelogic.com`
-- Dun & Bradstreet: `data-privacy@dnb.com`
+- Dun & Bradstreet: `customersupport@dnb.com` 
 - Schober: `datenschutz@schober.de`
 - Bisnode: `dpo@bisnode.com`
 - Criteo: `dpo@criteo.com`
