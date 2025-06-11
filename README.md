@@ -98,7 +98,6 @@ Sincerely,
 
 ## Notes 📝
 - **Email Rate Limits**: Gmail may limit the number of emails sent in a short period. The script includes a delay to mitigate this.
-- **Error Handling**: The script provides feedback for any errors encountered while sending emails.
 
 ## Disclaimer ⚠️
 This script is provided for informational purposes and should be used responsibly. Ensure you have the legal right to request data deletion from the listed brokers.
